@@ -16,8 +16,7 @@ export const PageHeader = ({ tag, title, accent, text, image, alt }) => (
   <section className="py-lg-13 py-8 bg-white position-relative"><div className="circle-bg d-none d-lg-block"></div>
     <div className="container"><div className="row align-items-center gy-8">
       <div className="col-lg-6">
-        <span className="badge bg-primary bg-opacity-10 text-primary px-4 py-3 fw-normal border border-primary rounded-pill">
-          <Icon name="circle" size={8} /><span className="ms-1">{tag}</span></span>
+        
         <h1 className="display-4 fw-bold mt-4">{title} <span className="text-primary">{accent}</span></h1>
         <p className="my-6 lead fw-normal">{text}</p>
         <Link to="/contact" className="btn btn-primary"><span>Talk to Us</span><Icon name="arrow" className="ms-2" /></Link>

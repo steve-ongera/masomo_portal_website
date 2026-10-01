@@ -2,6 +2,8 @@ import { useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import Icon from './Icon.jsx'
 
+const WHATSAPP_URL = 'https://wa.me/254112284093?text=Hello%20MasomoPortal%2C%20I%27d%20like%20to%20get%20started'
+
 export function Seo({ title, description }) {
   useEffect(() => {
     document.title = title
@@ -15,7 +17,7 @@ export function Seo({ title, description }) {
 const Logo = ({ nav }) => (
   <Link className={`${nav ? 'navbar-brand ' : ''}d-inline-flex gap-2 align-items-center lh-1`} to="/">
     <span className="text-primary"><Icon name="book" size={28} /></span>
-    <span className="fw-bold">masomoportal</span>
+    <span className="fw-bold">MasomoPortal</span>
   </Link>
 )
 const links = [['/', 'Home'], ['/about', 'About'], ['/pricing', 'Pricing'], ['/testimonials', 'Testimonials'], ['/contact', 'Contact Us']]
@@ -36,7 +38,17 @@ export function Navbar() {
             ))}
           </ul>
           <div className="d-flex gap-3 align-items-center">
-            <a href="#" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Get Started</a>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Chat with us on WhatsApp"
+              className="btn btn-primary d-inline-flex align-items-center gap-2"
+              style={{ backgroundColor: '#25D366', borderColor: '#25D366' }}
+            >
+              <i className="bi bi-whatsapp"></i>
+              <span>Chat on WhatsApp</span>
+            </a>
           </div>
         </div>
       </div>
