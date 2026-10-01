@@ -51,7 +51,7 @@ export function Hero() {
           </div>
           <div className="position-absolute bottom-0 start-0 ms-n8 mb-n8 d-none d-lg-block">
             <div className="bg-white shadow-sm rounded-pill d-flex align-items-center gap-2 px-3 py-2 mb-4 border" style={{ width: 170 }}>
-              <div className="icon-shape icon-md rounded-circle bg-primary bg-opacity-10 text-primary d-flex align-items-center justify-content-center"><Icon name="book" size={24} /></div>
+              <div className="icon-shape icon-md rounded-circle bg-primary bg-opacity-10 text-primary d-flex align-items-center justify-content-center"><i className="bi bi-code-slash fs-4"></i></div>
               <div className="d-flex flex-column text-xs lh-sm"><span className="fw-bold">200+ Projects</span><span>Delivered</span></div>
             </div>
           </div>

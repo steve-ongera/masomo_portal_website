@@ -18,7 +18,7 @@ export const solutions = [
   { t:'Fees, Results & SMS Automation', b:'Fees', c:'bg-success', img:img.s4, who:'Emma Davis', a:3, d:'6 weeks', n:'1.5K', r:'4.7', p:'KES 120,000', alt:'Staff reviewing automated fees and results reports' },
 ]
 export const team = [
-  { n:'John Smith', r:'Chief Technology Officer', a:0, s:'4.9', d:'12+ years building scalable platforms. Led school and college system rollouts across Kenya.', k:'120+', k2:'Projects' },
+  { n:'Mr. Steve Ongera', r:'Chief Technology Officer', a:0, s:'4.9', d:'12+ years building scalable platforms. Led school and college system rollouts across Kenya.', k:'120+', k2:'Projects' },
   { n:'Sarah Johnson', r:'Head of Product Design', a:1, s:'4.8', d:'10+ years crafting simple interfaces for teachers, students and parents.', k:'90+', k2:'Products' },
   { n:'Mike Chen', r:'Lead Data Engineer', a:2, s:'4.9', d:'7+ years in student records, exam analytics and reporting in production.', k:'60+', k2:'Pipelines' },
   { n:'Emma Davis', r:'Delivery Director', a:3, s:'4.8', d:'9+ years leading agile teams that deploy systems in schools across Kenya.', k:'150+', k2:'Launches' },
