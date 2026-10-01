@@ -112,4 +112,4 @@ MAILERS = {
 }
 
 # Where new contact-form messages are announced
-CONTACT_NOTIFY_EMAIL = 'hello@masomoportal.com'
+CONTACT_NOTIFY_EMAIL = 'steveongera001@gmail.com'

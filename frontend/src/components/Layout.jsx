@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import Icon from './Icon.jsx'
+import logo from '../assets/images/masomo_logo.png'
 
 const WHATSAPP_URL = 'https://wa.me/254112284093?text=Hello%20MasomoPortal%2C%20I%27d%20like%20to%20get%20started'
 
@@ -16,8 +17,8 @@ export function Seo({ title, description }) {
 
 const Logo = ({ nav }) => (
   <Link className={`${nav ? 'navbar-brand ' : ''}d-inline-flex gap-2 align-items-center lh-1`} to="/">
-    <span className="text-primary"><Icon name="book" size={28} /></span>
-    <span className="fw-bold">MasomoPortal</span>
+    <img src={logo} alt="" height="40" style={{ height: 40, width: 'auto' }} />
+    <span className="fw-bold">Masomo Portal</span>
   </Link>
 )
 const links = [['/', 'Home'], ['/about', 'About'], ['/pricing', 'Pricing'], ['/testimonials', 'Testimonials'], ['/contact', 'Contact Us']]
@@ -60,7 +61,7 @@ const cols = [
   ['Product', [['Solutions', '/'], ['Pricing', '/pricing'], ['Testimonials', '/testimonials'], ['Contact', '/contact']]],
   ['Company', [['About Us', '/about'], ['Careers', '/about'], ['Blog', '/'], ['Press', '/']]],
   ['Support', [['Help Center', '/contact'], ['Contact Us', '/contact'], ['Privacy Policy', '/'], ['Terms of Service', '/']]],
-  ['Services', [['Web Development', '/'], ['UI/UX Design', '/'], ['Cloud & DevOps', '/'], ['Data & AI', '/']]],
+  ['Services', [['School Systems', '/'], ['Landing Pages', '/'], ['Student Portals', '/'], ['Fees & Results', '/']]],
 ]
 export function Footer() {
   return (
@@ -69,9 +70,9 @@ export function Footer() {
         <div className="row gy-8">
           <div className="col-md-4">
             <Logo />
-            <p className="mt-4 mb-6">Empowering businesses worldwide with custom software, cloud and AI solutions built by expert engineers.</p>
+            <p className="mt-4 mb-6">Empowering schools, colleges and universities across Kenya with custom systems, websites and automation built by expert engineers.</p>
             <div className="d-flex flex-column gap-2">
-              {[['mail', 'hello@masomoportal.com'], ['phone', '+254 (234) 567-890'], ['pin', 'Mombasa, Kenya']].map(([i, t]) => (
+              {[['mail', 'steveongera001@gmail.com'], ['phone', '+254 112 284 093'], ['pin', 'Nairobi, Kenya']].map(([i, t]) => (
                 <span className="d-flex align-items-center gap-2" key={t}><span className="text-primary"><Icon name={i} size={18} /></span><span>{t}</span></span>
               ))}
             </div>
@@ -122,5 +123,36 @@ export function SignupModal() {
         </form>
       </div></div></div>
     </div>
+  )
+}
+
+
+export function Loader() {
+  return (
+    <div
+      className="d-flex flex-column align-items-center justify-content-center bg-white"
+      style={{ position: 'fixed', inset: 0, zIndex: 2000 }}
+      role="status"
+      aria-live="polite"
+    >
+      <div className="spinner-border text-primary" aria-hidden="true"></div>
+      <span className="visually-hidden">Loading...</span>
+    </div>
+  )
+}
+
+export function FloatingWhatsApp() {
+  return (
+    <a
+      href={WHATSAPP_URL}
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Chat with us on WhatsApp"
+      title="Chat on WhatsApp"
+      className="btn rounded-circle d-flex align-items-center justify-content-center text-white shadow-lg position-fixed"
+      style={{ right: 'clamp(16px, 5vw, 112px)', bottom: 'clamp(16px, 5vw, 112px)', width: 56, height: 56, zIndex: 1040, backgroundColor: '#25D366', borderColor: '#25D366' }}
+    >
+      <i className="bi bi-whatsapp fs-3"></i>
+    </a>
   )
 }

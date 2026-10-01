@@ -15,7 +15,7 @@ export default function Contact() {
       setStatus('ok'); setForm({ name: '', email: '', subject: '', message: '' })
     } catch { setStatus('error') }
   }
-  const info = [['mail', 'Email', 'hello@masomoportal.com'], ['phone', 'Phone', '+254 (234) 567-890'], ['pin', 'Office', 'Mombasa, Kenya']]
+  const info = [['mail', 'Email', 'steveongera001@gmail.com'], ['phone', 'Phone', '+254 112 284 093'], ['pin', 'Office', 'Nairobi, Kenya']]
   return (<>
     <Seo title="Contact Us | Masomo Portal" description="Contact Masomo Portal for a free software project estimate. We reply within 24 hours." />
     <PageHeader tag="Contact Us" title="Let's Build Your" accent="Next Product" text="Share your idea and our team will reply within 24 hours with next steps and a free estimate." image={img.contact} alt="Masomo Portal team ready to discuss your software project" />
@@ -25,8 +25,8 @@ export default function Contact() {
         {info.map(([i, t, v]) => <div className="d-flex gap-4 mb-4" key={t}>
           <div className="icon-shape icon-md bg-primary bg-opacity-10 rounded-circle text-primary flex-shrink-0"><Icon name={i} size={18} /></div>
           <div><h3 className="h6 mb-0">{t}</h3><p className="mb-0 small">{v}</p></div></div>)}
-        <iframe title="Masomo Portal office location in Mombasa" className="rounded-5 w-100 mt-4 border-0" height="260" loading="lazy"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=39.60%2C-4.10%2C39.75%2C-3.99&layer=mapnik"></iframe>
+        <iframe title="Masomo Portal office location in Nairobi" className="rounded-5 w-100 mt-4 border-0" height="260" loading="lazy"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=36.77%2C-1.32%2C36.87%2C-1.25&layer=mapnik&marker=-1.2864%2C36.8172"></iframe>
       </div>
       <div className="col-lg-7"><div className="card shadow-sm rounded-5"><div className="card-body p-8">
         <h2 className="h4 fw-bold mb-4">Send us a message</h2>
