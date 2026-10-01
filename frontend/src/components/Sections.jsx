@@ -33,15 +33,13 @@ export function Hero() {
       <div className="container"><div className="row align-items-center gy-8">
         <div className="col-lg-6">
           
-          <h1 className="display-4 fw-bold mt-4">School Management <span className="text-primary">Built for Kenya</span>, Delivered on Time</h1>
-          <p className="my-6 lead fw-normal">Masomo Portal is a software provider that creates landing pages and management systems for high schools, colleges and universities in Kenya, helping institutions go digital and grow.</p>
+          <h1 className="display-4 fw-bold mt-4">School Systems <span className="text-primary">Built for Kenya,</span> Delivered on Time</h1>
+          <p className="my-6 lead fw-normal">Masomo Portal is a software provider that builds school management systems, school websites and digital solutions for high schools, colleges and universities in Kenya, helping institutions manage operations and grow.</p>
           <div className="d-flex flex-md-row flex-column justify-content-start gap-3">
-            <Link to="/contact" className="btn btn-primary"><span>Start Your Project</span><Icon name="arrow" className="ms-2" /></Link>
+            <Link to="/contact" className="btn btn-primary"><span>Contact Us</span><Icon name="arrow" className="ms-2" /></Link>
             <Link to="/pricing" className="btn btn-light"><Icon name="youtube" className="text-danger" /><span className="ms-1">View Pricing</span></Link>
           </div>
-          <div className="d-flex gap-6 mt-8">
-            {stats.map(([i, b, t]) => <div className="d-flex align-items-center gap-2" key={t}><Icon name={i} size={20} className="text-primary" /><small className="mb-0"><span className="fw-bold">{b}</span> {t}</small></div>)}
-          </div>
+          
         </div>
         <div className="col-lg-6"><div className="card p-3 rounded-5 shadow-sm"><div className="position-relative">
           <img src={img.hero} alt="Masomo Portal team building school and college systems in Kenya" className="rounded-5 img-fluid" />
@@ -126,7 +124,7 @@ export function Why() {
           </div>
           <div className="row g-6">{why.map(([i, t, d]) => (
             <div className="col-md-6" key={t}><div className="d-flex gap-4">
-              <div className="icon-shape icon-md bg-primary bg-opacity-10 rounded-circle text-primary flex-shrink-0"><Icon name={i} size={18} /></div>
+              <div className="icon-shape icon-md bg-primary bg-opacity-10 rounded-circle text-primary flex-shrink-0"><i className={`bi ${i}`} style={{ fontSize: 18 }}></i></div>
               <div><h3 className="h6">{t}</h3><p className="mb-0 small">{d}</p></div>
             </div></div>
           ))}</div>

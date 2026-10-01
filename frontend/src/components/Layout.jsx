@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import Icon from './Icon.jsx'
-import logo from '../assets/images/masomo_logo.png'
+import logo from '../assets/images/masomo_portal_navbar.png'
 
 const WHATSAPP_URL = 'https://wa.me/254112284093?text=Hello%20MasomoPortal%2C%20I%27d%20like%20to%20get%20started'
 
@@ -17,14 +16,41 @@ export function Seo({ title, description }) {
 
 const Logo = ({ nav }) => (
   <Link className={`${nav ? 'navbar-brand ' : ''}d-inline-flex gap-2 align-items-center lh-1`} to="/">
-    <img src={logo} alt="" height="40" style={{ height: 40, width: 'auto' }} />
-    <span className="fw-bold">Masomo Portal</span>
+    <img src={logo} alt="Masomo Portal" height="40" style={{ height: 40, width: 'auto' }} />
   </Link>
 )
 const links = [['/', 'Home'], ['/about', 'About'], ['/pricing', 'Pricing'], ['/testimonials', 'Testimonials'], ['/contact', 'Contact Us']]
 
+const socials = [
+  ['bi-facebook', 'Facebook', 'https://www.facebook.com/'],
+  ['bi-twitter-x', 'Twitter', 'https://twitter.com/'],
+  ['bi-instagram', 'Instagram', 'https://www.instagram.com/'],
+  ['bi-linkedin', 'LinkedIn', 'https://www.linkedin.com/'],
+]
+
+function TopBar() {
+  return (
+    <div className="bg-dark text-white small d-none d-lg-block">
+      <div className="container d-flex justify-content-between align-items-center py-2">
+        <div className="d-flex align-items-center gap-4">
+          <span><i className="bi bi-geo-alt me-2"></i>Nairobi, Kenya</span>
+          <a href="mailto:steveongera001@gmail.com" className="text-white text-decoration-none"><i className="bi bi-envelope me-2"></i>steveongera001@gmail.com</a>
+          <a href="tel:+254112284093" className="text-white text-decoration-none"><i className="bi bi-telephone me-2"></i>+254 112 284 093</a>
+        </div>
+        <div className="d-flex align-items-center justify-content-end gap-3 ms-auto">
+          {socials.map(([icon, name, url]) => (
+            <a key={name} href={url} target="_blank" rel="noreferrer" aria-label={name} className="text-white lh-1"><i className={`bi ${icon}`}></i></a>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function Navbar() {
   return (
+    <>
+    <TopBar />
     <nav className="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
       <div className="container">
         <Logo nav />
@@ -54,43 +80,53 @@ export function Navbar() {
         </div>
       </div>
     </nav>
+    </>
   )
 }
 
 const cols = [
   ['Product', [['Solutions', '/'], ['Pricing', '/pricing'], ['Testimonials', '/testimonials'], ['Contact', '/contact']]],
   ['Company', [['About Us', '/about'], ['Careers', '/about'], ['Blog', '/'], ['Press', '/']]],
-  ['Support', [['Help Center', '/contact'], ['Contact Us', '/contact'], ['Privacy Policy', '/'], ['Terms of Service', '/']]],
   ['Services', [['School Systems', '/'], ['Landing Pages', '/'], ['Student Portals', '/'], ['Fees & Results', '/']]],
+]
+const contacts = [
+  ['bi-envelope', 'steveongera25@gmail.com', 'mailto:steveongera25@gmail.com'],
+  ['bi-telephone', '+254 112 284 093', 'tel:+254112284093'],
+  ['bi-telephone', '+254 757 790 687', 'tel:+254757790687'],
+  ['bi-geo-alt', 'Nairobi, Kenya', null],
 ]
 export function Footer() {
   return (
     <footer className="pt-lg-13 bg-light py-8">
       <div className="container">
-        <div className="row gy-8">
+        <div className="row gy-5">
           <div className="col-md-4">
             <Logo />
-            <p className="mt-4 mb-6">Empowering schools, colleges and universities across Kenya with custom systems, websites and automation built by expert engineers.</p>
-            <div className="d-flex flex-column gap-2">
-              {[['mail', 'steveongera001@gmail.com'], ['phone', '+254 112 284 093'], ['pin', 'Nairobi, Kenya']].map(([i, t]) => (
-                <span className="d-flex align-items-center gap-2" key={t}><span className="text-primary"><Icon name={i} size={18} /></span><span>{t}</span></span>
-              ))}
-            </div>
+            <p className="mt-4 mb-0">Empowering schools, colleges and universities across Kenya with custom systems, websites and automation built by expert engineers.</p>
           </div>
-          <div className="col-md-8"><div className="row">
+          <div className="col-md-8"><div className="row gx-3 gy-4">
             {cols.map(([h, ls]) => (
               <div className="col-lg-3 col-md-6" key={h}>
-                <h4 className="fs-5 mb-4">{h}</h4>
+                <h4 className="fs-5 mb-3">{h}</h4>
                 <ul className="list-unstyled lh-lg small">{ls.map(([l, to]) => <li key={l}><Link to={to}>{l}</Link></li>)}</ul>
               </div>
             ))}
+            <div className="col-lg-3 col-md-6">
+              <h4 className="fs-5 mb-3">Contact</h4>
+              <ul className="list-unstyled lh-lg small mb-0">{contacts.map(([icon, text, href]) => (
+                <li key={text} className="d-flex align-items-start gap-2">
+                  <i className={`bi ${icon} text-primary`}></i>
+                  {href ? <a href={href} className="text-break">{text}</a> : <span>{text}</span>}
+                </li>
+              ))}</ul>
+            </div>
           </div></div>
         </div>
         <div className="border-top mt-8 pt-6 row small">
           <div className="col-12 d-flex flex-column flex-md-row justify-content-between">
             <p>© 2026 Masomo Portal. All rights reserved. Developed by <a href="https://steve.com/" className="link-primary" target="_blank" rel="noreferrer">Steve Ongera</a></p>
-            <div>{['x', 'linkedin', 'github'].map(i => (
-              <a href="#" key={i} aria-label={i} className="btn rounded-circle btn-light btn-icon btn-xs"><Icon name={i} size={14} /></a>
+            <div className="d-flex gap-2">{socials.map(([icon, name, url]) => (
+              <a href={url} key={name} target="_blank" rel="noreferrer" aria-label={name} className="btn rounded-circle btn-light d-inline-flex align-items-center justify-content-center p-0" style={{ width: 32, height: 32 }}><i className={`bi ${icon}`}></i></a>
             ))}</div>
           </div>
         </div>

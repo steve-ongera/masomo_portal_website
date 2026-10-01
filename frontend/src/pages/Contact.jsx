@@ -18,7 +18,7 @@ export default function Contact() {
   const info = [['mail', 'Email', 'steveongera001@gmail.com'], ['phone', 'Phone', '+254 112 284 093'], ['pin', 'Office', 'Nairobi, Kenya']]
   return (<>
     <Seo title="Contact Us | Masomo Portal" description="Contact Masomo Portal for a free software project estimate. We reply within 24 hours." />
-    <PageHeader tag="Contact Us" title="Let's Build Your" accent="Next Product" text="Share your idea and our team will reply within 24 hours with next steps and a free estimate." image={img.contact} alt="Masomo Portal team ready to discuss your software project" />
+    <PageHeader tag="Contact Us" title="Let's Build Your Next Great" accent="Digital Product Together" text="Share your idea and our team will reply within 24 hours with next steps and a free estimate." image={img.contact} alt="Masomo Portal team ready to discuss your software project" />
     <section className="py-lg-13 py-8"><div className="container"><div className="row g-6">
       <div className="col-lg-5">
         <h2 className="fw-bold mb-4">Get in <span className="text-primary">Touch</span></h2>

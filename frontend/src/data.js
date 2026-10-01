@@ -24,12 +24,12 @@ export const team = [
   { n:'Emma Davis', r:'Delivery Director', a:3, s:'4.8', d:'9+ years leading agile teams that deploy systems in schools across Kenya.', k:'150+', k2:'Launches' },
 ]
 export const why = [
-  ['users','Dedicated Teams','Engineers, designers and QA embedded in your school project from day one.'],
-  ['msg','Transparent Updates','Weekly demos, shared boards and direct chat with the people building.'],
-  ['cal','Agile Sprints','Two-week sprints with working features at the end of every cycle.'],
-  ['bell','Post-launch Support','Training, maintenance and quick fixes after your system goes live.'],
-  ['world','Nationwide Delivery','Schools and colleges across Kenya served with on-site and remote training.'],
-  ['heart','True Partnership','We treat your institution like our own and share the risk.'],
+  ['bi-people','Dedicated Teams','Engineers, designers and QA embedded in your school project from day one.'],
+  ['bi-chat-dots','Transparent Updates','Weekly demos, shared boards and direct chat with the people building.'],
+  ['bi-calendar-check','Agile Sprints','Two-week sprints with working features at the end of every cycle.'],
+  ['bi-bell','Post-launch Support','Training, maintenance and quick fixes after your system goes live.'],
+  ['bi-globe','Nationwide Delivery','Schools and colleges across Kenya served with on-site and remote training.'],
+  ['bi-heart','True Partnership','We treat your institution like our own and share the risk.'],
 ]
 export const steps = [
   ['Discover','We study your school, staff and students in a free workshop.'],
