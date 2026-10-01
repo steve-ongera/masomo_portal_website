@@ -33,8 +33,8 @@ export function Hero() {
       <div className="container"><div className="row align-items-center gy-8">
         <div className="col-lg-6">
           
-          <h1 className="display-4 fw-bold mt-4">Custom Software <span className="text-primary">Built to Scale,</span> Delivered on Time</h1>
-          <p className="my-6 lead fw-normal">Masomo Portal is a software provider helping 50,000+ users and 200+ businesses launch web apps, mobile apps and cloud platforms that grow.</p>
+          <h1 className="display-4 fw-bold mt-4">School Management <span className="text-primary">Built for Kenya</span>, Delivered on Time</h1>
+          <p className="my-6 lead fw-normal">Masomo Portal is a software provider that creates landing pages and management systems for high schools, colleges and universities in Kenya, helping institutions go digital and grow.</p>
           <div className="d-flex flex-md-row flex-column justify-content-start gap-3">
             <Link to="/contact" className="btn btn-primary"><span>Start Your Project</span><Icon name="arrow" className="ms-2" /></Link>
             <Link to="/pricing" className="btn btn-light"><Icon name="youtube" className="text-danger" /><span className="ms-1">View Pricing</span></Link>
@@ -44,7 +44,7 @@ export function Hero() {
           </div>
         </div>
         <div className="col-lg-6"><div className="card p-3 rounded-5 shadow-sm"><div className="position-relative">
-          <img src={img.hero} alt="Software engineers collaborating on a project at Masomo Portal" className="rounded-5 img-fluid" />
+          <img src={img.hero} alt="Masomo Portal team building school and college systems in Kenya" className="rounded-5 img-fluid" />
           <div className="position-absolute top-0 end-0 me-n8 mt-n4 d-none d-lg-block">
             <div className="bg-white shadow-sm rounded-pill d-flex align-items-center gap-3 px-3 py-2 mb-4 border" style={{ width: 180 }}>
               <div className="avatar-group">{av.slice(0, 3).map((a, i) => <img key={i} src={a} alt="Happy client" className="avatar avatar-sm rounded-circle" />)}</div>
@@ -66,7 +66,7 @@ export function Hero() {
 export function Solutions() {
   return (
     <section className="py-lg-13 py-8" id="solutions"><div className="container">
-      <Heading tag="Solutions" title="Explore Our Popular" accent="Solutions" text="From idea to launch, our engineers deliver software that helps you achieve your business goals." />
+      <Heading tag="Solutions" title="Explore Our Popular" accent="Solutions" text="From landing pages to full school management systems, we build software for high schools, colleges and universities in Kenya." />
       <div className="row g-4">{solutions.map(s => (
         <div className="col-lg-3 col-md-6" key={s.t}><div className="card shadow-sm h-100 rounded-5 card-lift">
           <div className="position-relative overflow-hidden">
@@ -93,7 +93,7 @@ export function Solutions() {
 export function Team() {
   return (
     <section className="py-lg-13 py-8 bg-light bg-opacity-25" id="team"><div className="container">
-      <Heading w="col-lg-5" tag="Our Team" title="Meet The" accent="Experts" text="Our leaders have years of experience shipping software for startups and enterprises." />
+      <Heading w="col-lg-5" tag="Our Team" title="Meet The" accent="Experts" text="Our team has years of experience building software for high schools, colleges and universities across Kenya." />
       <div className="row g-4">{team.map(m => (
         <div className="col-lg-3 col-md-6 mb-4" key={m.n}><div className="card shadow-sm h-100 rounded-5 text-center p-6 card-lift">
           <div className="position-relative mb-4">
@@ -122,7 +122,7 @@ export function Why() {
           <div className="mb-10 pe-lg-12">
             <span className="text-primary text-uppercase small fw-semibold" style={{ letterSpacing: '.125rem' }}>Why Masomo Portal</span>
             <h2 className="fw-bold mt-4 mb-4">A Software Partner <span className="text-primary">You Can Trust</span></h2>
-            <p className="mb-0">We combine senior engineers, proven processes and honest communication so your product ships faster and grows with you.</p>
+            <p className="mb-0">We combine experienced engineers, an understanding of Kenyan schools and colleges, and honest communication so your system launches faster and grows with your institution.</p>
           </div>
           <div className="row g-6">{why.map(([i, t, d]) => (
             <div className="col-md-6" key={t}><div className="d-flex gap-4">
@@ -143,7 +143,7 @@ export function Why() {
             <div className="d-flex flex-column"><span className="fw-bold">24/7 Support</span><small>Always here</small></div></div></div>
           <div className="position-absolute bottom-0 start-0 ms-md-n8 mb-n8 d-none d-md-block"><div className="bg-white shadow-sm rounded-pill d-flex align-items-center gap-3 px-3 py-3 mb-4 border" style={{ width: 200 }}>
             <div className="icon-shape icon-md rounded-circle bg-primary bg-opacity-10 text-primary"><Icon name="world" size={18} /></div>
-            <div className="d-flex flex-column"><span className="fw-bold">150+ Countries</span><small>Worldwide reach</small></div></div></div>
+            <div className="d-flex flex-column"><span className="fw-bold">Across Kenya</span><small>Nationwide reach</small></div></div></div>
         </div></div>
       </div></div>
     </section>
@@ -178,7 +178,7 @@ export const Review = ({ r }) => (
 export function Testimonials({ all }) {
   return (
     <section className="py-lg-13 py-8 bg-light bg-opacity-50" id="testimonials"><div className="container">
-      <Heading w="col-12" tag="Testimonials" title="What Our" accent="Clients" text="Join hundreds of businesses that grew with software built by Masomo Portal." />
+      <Heading w="col-12" tag="Testimonials" title="What Our" accent="Clients" text="Join high schools, colleges and universities across Kenya that grew with software built by Masomo Portal." />
       <div className="row gx-4 gy-6">{(all ? reviews : reviews.slice(0, 3)).map(r => <Review key={r[0]} r={r} />)}</div>
       {!all && <div className="text-center mt-10"><Link to="/testimonials" className="btn btn-outline-dark">Read All Reviews<Icon name="arrow" className="ms-1" /></Link></div>}
     </div></section>
@@ -188,7 +188,7 @@ export function Testimonials({ all }) {
 export function Pricing() {
   return (
     <section className="py-lg-13 py-8" id="pricing"><div className="container">
-      <Heading w="col-12" tag="Pricing" title="Simple, Transparent" accent="Pricing" text="Choose the plan that fits your project. No hidden fees, cancel anytime." />
+      <Heading w="col-12" tag="Pricing" title="Simple, Transparent" accent="Pricing" text="Choose the plan that fits your school, college or university. No hidden fees, cancel anytime." />
       <div className="row g-4 mx-xxl-13">{plans.map(p => (
         <div className="col-lg-4" key={p.n}><div className={`card shadow-sm rounded-5 h-100 ${p.hl ? 'border-primary' : ''}`}><div className="card-body p-6">
           <div className="text-center mt-5 mb-9">
@@ -203,7 +203,7 @@ export function Pricing() {
           {p.hl && <span className="badge bg-primary position-absolute top-0 start-50 translate-middle-x mt-n3 rounded-pill text-xs">Most Popular</span>}
         </div></div>
       ))}</div>
-      <p className="mb-0 small text-center mt-8">All plans include a 14-day money-back guarantee. No questions asked.</p>
+      <p className="mb-0 small text-center mt-8">All prices are in Kenya Shillings (KES). All plans include a 14-day money-back guarantee. No questions asked.</p>
     </div></section>
   )
 }
@@ -211,7 +211,7 @@ export function Pricing() {
 export function Faq() {
   return (
     <section className="py-lg-13 py-8"><div className="container">
-      <Heading tag="FAQ" title="Frequently Asked" accent="Questions" text="Quick answers to what clients ask us most." />
+      <Heading tag="FAQ" title="Frequently Asked" accent="Questions" text="Quick answers to what schools, colleges and universities ask us most." />
       <div className="row"><div className="col-lg-8 mx-auto"><div className="accordion" id="faq">{faqs.map(([q, a], i) => (
         <div className="accordion-item" key={q}>
           <h3 className="accordion-header"><button className={`accordion-button ${i ? 'collapsed' : ''}`} type="button" data-bs-toggle="collapse" data-bs-target={`#f${i}`}>{q}</button></h3>
@@ -224,8 +224,8 @@ export function Faq() {
 
 export const Cta = () => (
   <section className="py-lg-13 py-8"><div className="container"><div className="card bg-primary text-white rounded-5 p-8 text-center border-0">
-    <h2 className="fw-bold text-white">Ready to build your next software product?</h2>
-    <p className="lead mb-6">Tell us about your idea and get a free estimate within 48 hours.</p>
+    <h2 className="fw-bold text-white">Ready to take your school or institution online?</h2>
+    <p className="lead mb-6">Tell us what your high school, college or university needs and get a free quote in KES within 48 hours.</p>
     <div><Link to="/contact" className="btn btn-light">Get a Free Quote<Icon name="arrow" className="ms-2" /></Link></div>
   </div></div></section>
 )
