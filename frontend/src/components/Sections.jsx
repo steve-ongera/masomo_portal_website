@@ -1,6 +1,21 @@
 import { Link } from 'react-router-dom'
 import Icon from './Icon.jsx'
 import { img, av, solutions, team, why, steps, reviews, plans, faqs } from '../data.js'
+import jundaLogo from '../assets/images/clients/junda_high_logo.png'
+import ktmcLogo from '../assets/images/clients/ktmc.jpg'
+import lenanaLogo from '../assets/images/clients/lenana_logo.png'
+import mutLogo from '../assets/images/clients/mut_logo2.jpg'
+import tumLogo from '../assets/images/clients/tum_logo.png'
+import uonLogo from '../assets/images/clients/uonlogo.jpg'
+
+const clients = [
+  { name: 'Junda High School', logo: jundaLogo },
+  { name: 'KTMC', logo: ktmcLogo },
+  { name: 'Lenana School', logo: lenanaLogo },
+  { name: 'Murang\u2019a University of Technology', logo: mutLogo },
+  { name: 'Technical University of Mombasa', logo: tumLogo },
+  { name: 'University of Nairobi', logo: uonLogo },
+]
 
 export const Stars = ({ n = 5, size = 18 }) => (
   <div className="d-flex gap-0 align-items-center">{Array.from({ length: n }, (_, i) => <Icon key={i} name="star" size={size} className="text-warning" />)}</div>
@@ -132,7 +147,7 @@ export function Why() {
         </div>
         <div className="col-xl-6"><div className="card shadow-lg rounded-5"><div className="card-body p-8 py-8">
           {[0, 3].map(r => <div className="row mb-4 justify-content-center gx-2 text-center" key={r}>{[0, 1, 2].map(c => (
-            <div className="col-4" key={c}><img src={av[(r + c) % 6]} alt="Masomo Portal client" className={`rounded-circle avatar avatar-xxxl border border-3 border-${rings[c]} border-opacity-25`} loading="lazy" /></div>
+            <div className="col-4" key={c}><img src={clients[r + c].logo} alt={`${clients[r + c].name} logo`} className={`rounded-circle avatar avatar-xxxl border border-3 border-${rings[c]} border-opacity-25 bg-white p-1`} style={{ objectFit: 'contain' }} loading="lazy" /></div>
           ))}</div>)}
           <img src={img.office} alt="Masomo Portal modern software development office" className="rounded-4 img-fluid" loading="lazy" />
         </div>
@@ -144,6 +159,7 @@ export function Why() {
             <div className="d-flex flex-column"><span className="fw-bold">Across Kenya</span><small>Nationwide reach</small></div></div></div>
         </div></div>
       </div></div>
+      <style>{`@media (max-width: 767.98px) { #why .avatar-xxxl { zoom: .7; } }`}</style>
     </section>
   )
 }

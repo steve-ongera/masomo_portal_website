@@ -47,35 +47,63 @@ function TopBar() {
   )
 }
 
+const drawerCss = `
+@media (max-width: 991.98px) {
+  #navbarOffcanvas { width: min(85vw, 320px); }
+  #navbarOffcanvas .offcanvas-header { padding: 1rem 1.25rem; border-bottom: 1px solid #eef0f2; }
+  #navbarOffcanvas .btn-close { font-size: 1.5rem; opacity: .7; }
+  #navbarOffcanvas .offcanvas-body { padding: 1.25rem; }
+  #navbarOffcanvas .navbar-nav { width: 100%; gap: 0; margin: 0 0 1.25rem !important; }
+  #navbarOffcanvas .nav-item:not(:last-child) { border-bottom: 1px solid #e3e6ea; }
+  #navbarOffcanvas .nav-link { padding: 1rem 0; text-align: center; font-weight: 500; color: #343a40; }
+  #navbarOffcanvas .nav-link.active { color: var(--bs-primary); }
+  #navbarOffcanvas .offcanvas-body > div { width: 100%; }
+  #navbarOffcanvas .offcanvas-body .btn { width: 100%; justify-content: center; padding: .875rem 1rem; white-space: nowrap; }
+}
+`
+
+// Close the mobile drawer (no-op on large screens where the menu is inline)
+const closeMenu = () => {
+  if (window.innerWidth < 992) document.querySelector('#navbarOffcanvas .btn-close')?.click()
+}
+
 export function Navbar() {
   return (
     <>
+    <style>{drawerCss}</style>
     <TopBar />
     <nav className="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
       <div className="container">
         <Logo nav />
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas"
+          aria-controls="navbarOffcanvas" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-            {links.map(([to, l]) => (
-              <li className="nav-item" key={to}><NavLink end to={to} className="nav-link">{l}</NavLink></li>
-            ))}
-          </ul>
-          <div className="d-flex gap-3 align-items-center">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Chat with us on WhatsApp"
-              className="btn btn-primary d-inline-flex align-items-center gap-2"
-              style={{ backgroundColor: '#25D366', borderColor: '#25D366' }}
-            >
-              <i className="bi bi-whatsapp"></i>
-              <span>Chat on WhatsApp</span>
-            </a>
+        <div className="offcanvas offcanvas-end" tabIndex="-1" id="navbarOffcanvas" aria-labelledby="navbarOffcanvasLabel">
+          <div className="offcanvas-header">
+            <h5 className="offcanvas-title" id="navbarOffcanvasLabel">Menu</h5>
+            <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div className="offcanvas-body align-items-lg-center">
+            <ul className="navbar-nav mx-auto mb-3 mb-lg-0">
+              {links.map(([to, l]) => (
+                <li className="nav-item" key={to}><NavLink end to={to} className="nav-link" onClick={closeMenu}>{l}</NavLink></li>
+              ))}
+            </ul>
+            <div className="d-flex gap-3 align-items-center">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Chat with us on WhatsApp"
+                className="btn btn-primary d-inline-flex align-items-center gap-2"
+                style={{ backgroundColor: '#25D366', borderColor: '#25D366' }}
+                onClick={closeMenu}
+              >
+                <i className="bi bi-whatsapp"></i>
+                <span>Chat on WhatsApp</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -106,12 +134,12 @@ export function Footer() {
           </div>
           <div className="col-md-8"><div className="row gx-3 gy-4">
             {cols.map(([h, ls]) => (
-              <div className="col-lg-3 col-md-6" key={h}>
+              <div className="col-6 col-lg-3" key={h}>
                 <h4 className="fs-5 mb-3">{h}</h4>
                 <ul className="list-unstyled lh-lg small">{ls.map(([l, to]) => <li key={l}><Link to={to}>{l}</Link></li>)}</ul>
               </div>
             ))}
-            <div className="col-lg-3 col-md-6">
+            <div className="col-6 col-lg-3">
               <h4 className="fs-5 mb-3">Contact</h4>
               <ul className="list-unstyled lh-lg small mb-0">{contacts.map(([icon, text, href]) => (
                 <li key={text} className="d-flex align-items-start gap-2">
